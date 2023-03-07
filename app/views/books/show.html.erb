@@ -6,6 +6,9 @@
   <p>title：<%= @book.title %></p>
   <p>opinion：<%= @book.body %></p>
   <p>ユーザーネーム：<%= @book.user.name %></p>
-  <%=link_to("Edit", edit_book_path(@book.id) )%>
+
+<% if @book.user == current_user %>
+  <%=link_to "Edit", edit_book_path(@book.id) %>
   <%=link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
+<%end%>
 </div>

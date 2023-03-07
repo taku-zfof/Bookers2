@@ -6,6 +6,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :image
+  validates :name, presence: true, uniqueness: true
+  validates :introduction, length:{maximum:50}
+
 
   def get_image
     unless image.attached?

@@ -1,4 +1,16 @@
 <!--左-->
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>error prohibited this book from being saved:
+
+  <ul>
+   <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+   <% end %>
+  </ul>
+
+<% end %>
+
+
 <div>
     <h1>User Info</h1>
     <%= image_tag @user.get_image %>
