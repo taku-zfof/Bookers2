@@ -1,14 +1,20 @@
-<h1>welcome to bookers!</h1>
-<p>In Bookers,</br>
+<div class="container mt-3">
+<div class="row">
+<div class="mx-auto mt-50 col-11 col-sm-10 col-lg-8 col-xl-6">
+<h1>welcome to <span><i class="fas fa-book"></i></span>bookers!</h1>
+<p>In <span><i class="fas fa-book"></i></span>Bookers,</br>
 
 you can share and exchange your opinions , inpressions , and emotions</br>
 
 about various books!</p>
 
  <%= link_to("/users/sign_in") do %>
-  <p>Log in</p>
+  <div class="btn btn-primary btn-sm btn-block sign_up mt-4">Log in</div>
  <% end %>
 
  <%= link_to ("/users/sign_up") do %>
-  <p>Sign in</p>
+  <div class="btn btn-success btn-sm btn-block sign_up mt-4">Sign Up</div>
  <% end %>
+</div>
+</div>
+</div>

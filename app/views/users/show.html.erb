@@ -1,7 +1,15 @@
-<h1>共通レイアウト</h1>
+<div class="container">
+<div class="row">
+<div class="col-md-3">
 
+<%= render 'books/w', book: @book %>
+
+</div>
+<div class="col-md-1"></div>
+
+<div class="col-md-8 ">
 <h1>Books</h1>
-  <table>
+  <table class="table table-striped">
 
       <thead>
         <tr>
@@ -18,9 +26,10 @@
           <td><%=link_to "#{book.title}", book_path(book.id)%></td>
           <td><%= book.body %></td>
         </tr>
-
        <%end%>
-
       </tbody>
 
     </table>
+</div>
+</div>
+</div>

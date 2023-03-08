@@ -1,52 +1,22 @@
-<!--左-->
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>error prohibited this book from being saved:
+<div class="container">
+<div class="row">
+<div class="col-md-3">
 
-  <ul>
-   <% @book.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-   <% end %>
-  </ul>
+<%= render 'w', book: @book %>
 
-<% end %>
-
-
-<div>
-    <h1>User Info</h1>
-    <%= image_tag @user.get_image %>
-    <h2>Name:<%=@user.name%></h2>
-    <h2>introduction:<%=@user.introduction%></h2>
-    <%= link_to edit_user_path(@user.id) do %>
-       <p>image</p>
-    <% end %>
 </div>
+<div class="col-md-1"></div>
 
-<div>
-  <h1>New Book</h1>
-  <%= form_with model: @book do |f| %>
-    <h4>Title</h4>
-      <%= f.text_field :title %>
-    <h4>Opinion</h4>
-      <%= f.text_area :body %>
-    <%= f.submit 'Create Book' %>
-  <% end %>
-</div>
+<div class="col-md-8 ">
+  <h2>Books</h2>
 
-
-
-<!--右-->
-
-
-
- <h1>Books</h1>
-
-    <table>
+    <table class="table table-striped">
 
       <thead>
         <tr>
           <th></th>
-          <th>title</th>
-          <th>body</th>
+          <th>Title</th>
+          <th>Opinion</th>
         </tr>
       </thead>
 
@@ -61,3 +31,7 @@
       </tbody>
 
     </table>
+
+</div>
+</div>
+</div>
