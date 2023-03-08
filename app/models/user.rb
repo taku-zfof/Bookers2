@@ -2,12 +2,13 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_one_attached :image
+  validates :name, presence: true, uniqueness: true,length:{minimum: 2, maximum: 20 }
+  validates :introduction, length:{maximum:50}
+
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  has_one_attached :image
-  validates :name, presence: true, uniqueness: true
-  validates :introduction, length:{maximum:50}
 
 
   def get_image
